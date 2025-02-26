@@ -1,0 +1,139 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "PT Sans", sans-serif;
+}
+
+.page-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.content-wrap {
+  flex: 1;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.home,
+.services,
+.products {
+  display: flex;
+  height: 90vh;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.services {
+  background-image: url("/images/alpDuo.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 100px;
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
+}
+
+.products {
+  background-image: url("/images/alp5.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 100px;
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
+}
+
+.sign-up {
+  font-size: 50px;
+}
+
+.cards {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.booking-form,
+.signup-form {
+  width: 100%;
+  max-width: 512px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.hero-container {
+  background: url("/images/alp2.jpg") center center/cover no-repeat;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
+  object-fit: contain;
+}
+
+.hero-container.products {
+  background: url("/images/alp5.jpg") center center/cover no-repeat;
+}
+
+.hero-container > h1 {
+  color: #fff;
+  font-size: 100px;
+  margin-top: -100px;
+}
+
+.hero-container > p {
+  margin-top: 8px;
+  color: #fff;
+  font-size: 32px;
+}
+
+.form-container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: #fff;
+}
+
+.form-page {
+  padding-top: 80px;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: white;
+}
