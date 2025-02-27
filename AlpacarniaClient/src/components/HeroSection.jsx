@@ -10,12 +10,8 @@ function HeroSection() {
       <h1>ZWIERZĘTA CZEKAJĄ</h1>
       <p>Nad czym się zastanawiasz?</p>
       <div className="hero-btns">
-        <Button className='btns' buttonStyle='btn--outline' buttonSize='btn--large'>
-            ZAREZERUJ
-        </Button>
-        <Button className='btns' buttonStyle='btn--primary' buttonSize='btn--large'>
-            ZOBACZ ALPAKI
-        </Button>
+        <Button className='btns' buttonStyle='btn--outline' buttonSize='btn--large'>ZAREZERUJ</Button>
+        <Button className='btns' buttonStyle='btn--primary' buttonSize='btn--large'>ZOBACZ ALPAKI</Button>
       </div>
     </div>
   )

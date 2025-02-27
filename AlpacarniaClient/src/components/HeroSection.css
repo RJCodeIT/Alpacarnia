@@ -30,14 +30,18 @@ video {
   font-size: 32px;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
+  white-space: nowrap;
 }
 
 .hero-btns {
   margin-top: 32px;
+  display: flex;
+  gap: 12px;
 }
 
 .hero-btns .btn {
   margin: 6px;
+  white-space: nowrap;
 }
 
 .fa-play-circle {
@@ -68,5 +72,18 @@ video {
 
   .btn {
     width: 100%;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .hero-btns {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .hero-btns .btn {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
   }
 }

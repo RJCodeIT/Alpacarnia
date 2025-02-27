@@ -2,10 +2,15 @@
 .user-reviews {
   padding: 4rem;
   background: #fff;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .user-reviews h1 {
   text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #1a1a1a;
 }
 
 .user-reviews__container {
@@ -17,4 +22,37 @@
   max-width: 1120px;
   width: 90%;
   margin: 0 auto;
+}
+
+@media screen and (max-width: 1024px) {
+  .user-reviews {
+    padding: 3rem;
+  }
+
+  .user-reviews h1 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .user-reviews {
+    padding: 2rem;
+  }
+
+  .user-reviews h1 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .user-reviews {
+    padding: 1rem;
+  }
+
+  .user-reviews h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
 }

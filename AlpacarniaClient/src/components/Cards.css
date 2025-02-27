@@ -24,12 +24,18 @@ h1 {
 
 .cards__items {
   margin-bottom: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
 }
 
 .cards__item {
   display: flex;
   flex: 1;
-  margin: 0 1rem;
+  min-width: 300px;
+  max-width: 400px;
+  margin: 0;
   border-radius: 10px;
 }
 
@@ -118,35 +124,36 @@ h1 {
   }
 }
 
-.cards__items {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center; /* This centers the cards in the container */
-  margin-bottom: 24px;
-}
-
-.cards__item {
-  flex: 1;
-  margin: 0.5rem; /* Adjust the margin as necessary */
-  max-width: calc(
-    25% - 1rem
-  ); /* Adjust based on margin to fit 4 items per row */
-  border-radius: 10px;
-}
-
-@media only screen and (max-width: 1024px) {
-  .cards__item {
-    margin-bottom: 2rem;
-    max-width: calc(
-      50% - 1rem
-    ); /* Adjust for smaller screens to fit 2 items per row */
+@media screen and (max-width: 960px) {
+  .cards {
+    padding: 2rem;
+  }
+  
+  .cards h1 {
+    font-size: 2rem;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .cards__item {
-    max-width: calc(
-      100% - 2rem
-    ); /* Adjust for very small screens to fit 1 item per row */
+    min-width: 250px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .cards {
+    padding: 1rem;
+  }
+
+  .cards h1 {
+    font-size: 1.5rem;
+  }
+
+  .cards__item {
+    min-width: 100%;
+  }
+
+  .cards__item__text {
+    font-size: 16px;
   }
 }

@@ -1,23 +1,27 @@
 .aboutus-info {
-  padding: 2rem;
+  padding: 3rem;
   background: #fff;
   border-radius: 10px;
   box-shadow: 0px 1px 14px 0px rgba(180, 180, 180, 1);
   margin: 3rem auto;
-  max-width: 80%;
+  max-width: 1200px;
+  width: 80%;
   color: black;
-  /*border:1px solid rgba(0, 0, 0, 0.15);*/
 }
 
 .aboutus-info h1 {
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  color: #1a1a1a;
 }
 
 .aboutus-info p {
   text-align: justify;
-  font-size: 12px;
-  line-height: 1.6;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  color: #333;
 }
 
 .aboutus-info iframe {
@@ -27,8 +31,72 @@
   margin: 0 auto;
   padding-top: 10px;
 }
+
 .wild-alpaca {
   display: block;
   margin: 20px auto;
-  width: 50%;
+  width: 60%;
+  max-width: 800px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (max-width: 1024px) {
+  .aboutus-info {
+    width: 90%;
+    padding: 2rem;
+  }
+
+  .aboutus-info h1 {
+    font-size: 2rem;
+  }
+
+  .wild-alpaca {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .aboutus-info {
+    margin: 2rem auto;
+    padding: 1.5rem;
+  }
+
+  .aboutus-info h1 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .aboutus-info p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .wild-alpaca {
+    width: 85%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .aboutus-info {
+    width: 95%;
+    margin: 1rem auto;
+    padding: 1rem;
+  }
+
+  .aboutus-info h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .aboutus-info p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    text-align: left;
+  }
+
+  .wild-alpaca {
+    width: 100%;
+    margin: 10px auto;
+  }
 }
