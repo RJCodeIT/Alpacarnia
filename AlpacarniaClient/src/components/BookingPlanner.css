@@ -102,6 +102,61 @@
   font-weight: 600;
 }
 
+.reservation-title {
+  background-color: rgb(28, 27, 27);
+  color: white;
+  padding: 12px;
+  border-radius: 6px;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  border: none;
+  cursor: pointer;
+  min-width: 120px;
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: bold;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}
+
+.reservation-container {
+  text-align: center;
+}
+
+.reservation-container form {
+  max-width: 450px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.reservation-container input,
+.reservation-container select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin: 0.25rem 0;
+}
+
+.reservation-container button[type="submit"] {
+  background-color: rgb(28, 27, 27);
+  color: white;
+  padding: 12px;
+  border-radius: 6px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  margin-top: 1rem;
+  font-weight: bold;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}
+
+.reservation-container button[type="submit"]:hover {
+  opacity: 0.9;
+}
+
 @media (max-width: 768px) {
   .week-grid {
     grid-template-columns: 1fr;

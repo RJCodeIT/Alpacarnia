@@ -6,6 +6,7 @@ function ReservationSystem() {
   const [bookings, setBookings] = useState([]);
   const [error, setError] = useState(null);
   const [availableSlots, setAvailableSlots] = useState([]);
+  const [isFormVisible, setIsFormVisible] = useState(false);
   const { currentUser } = useSelector((state) => state.user);
   const [formData, setFormData] = useState({
     firstName: currentUser?.username || "",
@@ -207,72 +208,76 @@ function ReservationSystem() {
       </div>
 
       <div className="reservation-container">
-        <h2>Make a Reservation</h2>
-        <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            name="firstName"
-            placeholder="First Name"
-            value={formData.firstName}
-            onChange={handleInputChange}
-            required
-          />
-          <input
-            type="text"
-            name="lastName"
-            placeholder="Last Name"
-            value={formData.lastName}
-            onChange={handleInputChange}
-            required
-          />
-          <input
-            type="number"
-            name="amountPeople"
-            placeholder="Number of People"
-            value={formData.amountPeople}
-            onChange={handleInputChange}
-            min="1"
-            required
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            value={formData.email}
-            onChange={handleInputChange}
-            required
-          />
-          <input
-            type="tel"
-            name="phone"
-            placeholder="Phone Number"
-            value={formData.phone}
-            onChange={handleInputChange}
-            required
-          />
-          <input
-            type="date"
-            name="date"
-            value={formData.date}
-            onChange={handleInputChange}
-            required
-          />
-          <select
-            name="time"
-            value={formData.time}
-            onChange={handleInputChange}
-            required
-          >
-            <option value="">Select Time</option>
-            {availableSlots.map((slot, index) => (
-              <option key={index} value={slot}>
-                {slot}
-              </option>
-            ))}
-          </select>
-          
-          <button type="submit">Make Reservation</button>
-        </form>
+        <h2 className="reservation-title" onClick={() => setIsFormVisible(!isFormVisible)}>
+          Make a Reservation
+        </h2>
+        {isFormVisible && (
+          <form onSubmit={handleSubmit}>
+            <input
+              type="text"
+              name="firstName"
+              placeholder="First Name"
+              value={formData.firstName}
+              onChange={handleInputChange}
+              required
+            />
+            <input
+              type="text"
+              name="lastName"
+              placeholder="Last Name"
+              value={formData.lastName}
+              onChange={handleInputChange}
+              required
+            />
+            <input
+              type="number"
+              name="amountPeople"
+              placeholder="Number of People"
+              value={formData.amountPeople}
+              onChange={handleInputChange}
+              min="1"
+              required
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              value={formData.email}
+              onChange={handleInputChange}
+              required
+            />
+            <input
+              type="tel"
+              name="phone"
+              placeholder="Phone Number"
+              value={formData.phone}
+              onChange={handleInputChange}
+              required
+            />
+            <input
+              type="date"
+              name="date"
+              value={formData.date}
+              onChange={handleInputChange}
+              required
+            />
+            <select
+              name="time"
+              value={formData.time}
+              onChange={handleInputChange}
+              required
+            >
+              <option value="">Select Time</option>
+              {availableSlots.map((slot, index) => (
+                <option key={index} value={slot}>
+                  {slot}
+                </option>
+              ))}
+            </select>
+            
+            <button type="submit">Make Reservation</button>
+          </form>
+        )}
       </div>
     </div>
   );
