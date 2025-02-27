@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Button } from "./Button";
 import { useSelector } from "react-redux";
 import "./Navbar.css";
+
 function Navbar() {
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
@@ -25,6 +26,7 @@ function Navbar() {
   window.addEventListener("resize", showButton);
 
   const { currentUser } = useSelector((state) => state.user);
+
   return (
     <>
       <nav className="navbar">
@@ -78,19 +80,19 @@ function Navbar() {
               </Link>
             </li>
           </ul>
-          <Link to="/alpacarnia/profile" className="navbar-img-link">
+          <div className="navbar-profile">
             {currentUser ? (
-              <img
-                src={currentUser.pfpicture}
-                alt="profil"
-                className="navbar-img"
-              />
+              <Link to="/alpacarnia/profile" className="navbar-img-link">
+                <img
+                  src={currentUser.pfpicture}
+                  alt="profil"
+                  className="navbar-img"
+                />
+              </Link>
             ) : (
-              /*<img src={currentUser.pfpicture} alt="nieprofil" /> */
               <Button buttonStyle="btn-outline">DOŁĄCZ</Button>
             )}
-          </Link>
-          {/*  {button && <Button buttonStyle="btn-outline">DOŁĄCZ</Button>}   */}
+          </div>
         </div>
       </nav>
     </>

@@ -86,7 +86,7 @@ function ReservationSystem() {
         );
 
         const response = await fetch(
-          `${import.meta.env.VITE_API_URL}/api/booking/admin/dashboard?startDate=${startDate}&endDate=${endDate}`,
+          `${import.meta.env.VITE_API_URL}/api/booking/admin/dashboard`,
           {
             method: "GET",
             credentials: "include",
@@ -96,11 +96,16 @@ function ReservationSystem() {
           }
         );
 
-        if (!response.ok) throw new Error("Network response was not ok");
+        if (!response.ok) {
+          const errorData = await response.text();
+          throw new Error(`Network response was not ok: ${errorData}`);
+        }
         const data = await response.json();
         setBookings(data);
-      } catch (err) {
-        setError(err.message);
+        console.log("Fetched bookings:", data);
+      } catch (error) {
+        setError(error.message);
+        console.error("Error fetching bookings:", error);
       }
     };
 

@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import CardItem from "./CardItem";
-import "./Cards.css";
+import "./CardsProducts.css";
 import { useNavigate } from "react-router-dom";
 import { useOffers } from "./OffersContext";
 
-function Cards({ onSelectOffer }) {
+function CardsProducts({ onSelectOffer }) {
   const { offers, fetchOffers } = useOffers();
   const navigate = useNavigate();
 
@@ -16,28 +16,27 @@ function Cards({ onSelectOffer }) {
     navigate(`/alpacarnia/offer/${card._id}`);
   };
 
-  const getImageUrl = (path) => {
-    // Usuń początkowy slash jeśli istnieje
-    const cleanPath = path.startsWith('/') ? path.slice(1) : path;
-    return new URL(`../assets/${cleanPath}`, import.meta.url).href;
-  };
-
   return (
     <div className="cards">
       <div className="cards__container">
         <h1>Szef kuchni Robert poleca:</h1>
         <div className="cards__wrapper">
           <ul className="cards__items">
-            {offers.map((offer) => (
-              <CardItem
-                key={offer._id}
-                src={getImageUrl(offer.img)}
-                text={offer.text}
-                label={offer.label}
-                path={`/alpacarnia/offer/${offer._id}`}
-                onClick={() => handleCardSelect(offer)}
-              />
-            ))}
+            {Array.isArray(offers) && offers.length > 0 ? offers.map((offer, index) => {
+              // Sprawdź czy offer jest obiektem i czy ma wymagane pola
+              if (!offer || typeof offer !== 'object') return null;
+              
+              return (
+                <CardItem
+                  key={offer._id || Math.random()}
+                  src={offer.src}
+                  text={offer.text || ''}
+                  label={offer.label || ''}
+                  path={offer._id ? `/alpacarnia/offer/${offer._id}` : '#'}
+                  onClick={() => offer._id && handleCardSelect(offer)}
+                />
+              );
+            }) : <p>Brak dostępnych ofert</p>}
           </ul>
         </div>
       </div>
@@ -45,4 +44,4 @@ function Cards({ onSelectOffer }) {
   );
 }
 
-export default Cards;
+export default CardsProducts;

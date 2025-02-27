@@ -24,7 +24,7 @@ function Footer() {
                 <Link to='/alpacarnia'>Futro</Link>
                 <Link to='/alpacarnia'>Sesje zdjęciowe</Link>
             </div>         
-            <div class='footer-link-items'>
+            <div className='footer-link-items'>
                 <h2>Social Media</h2>
                 <Link to='/alpacarnia'>Instagram</Link>
                 <Link to='/alpacarnia'>TikTok</Link>
@@ -54,28 +54,28 @@ function Footer() {
                  <i className="fa fa-instagram"></i>
                 </Link>
                 <Link
-                class='social-icon-link youtube'
+                className='social-icon-link youtube'
                 to='/alpacarnia'
                 target='_blank'
                 aria-label='Youtube'
                 >
-                <i class='fa fa-youtube' />
+                <i className='fa fa-youtube' />
                 </Link>
                 <Link
-                class='social-icon-link twitter'
+                className='social-icon-link twitter'
                 to='/alpacarnia'
                 target='_blank'
                 aria-label='Twitter'
                 >
-                <i class='fa fa-twitter' />
+                <i className='fa fa-twitter' />
                 </Link>
                 <Link
-                class='social-icon-link linkedin'
+                className='social-icon-link linkedin'
                 to='/alpacarnia'
                 target='_blank'
                 aria-label='LinkedIn'
                 >
-                <i class='fa fa-linkedin' />
+                <i className='fa fa-linkedin' />
                 </Link>
             </div>
         </div>
