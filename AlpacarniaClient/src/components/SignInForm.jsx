@@ -20,7 +20,7 @@ function SignInForm() {
   const handleChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.className]: e.target.value,
+      [e.target.name]: e.target.value,
     });
   };
 
@@ -59,13 +59,15 @@ function SignInForm() {
           <input
             type="email"
             placeholder="email"
-            className="email"
+            name="email"
+            className="input-field"
             onChange={handleChange}
           />
           <input
             type="password"
             placeholder="hasło"
-            className="password"
+            name="password"
+            className="input-field"
             onChange={handleChange}
           />
           <button disabled={loading} className="signin-button">
