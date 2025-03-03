@@ -45,6 +45,21 @@
   color: #333;
 }
 
+/* Chrome autofill styles */
+.input-field:-webkit-autofill,
+.input-field:-webkit-autofill:hover,
+.input-field:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 30px #f1f1f1 inset !important;
+  -webkit-text-fill-color: #333 !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Firefox autofill styles */
+.input-field:autofill {
+  background-color: #f1f1f1 !important;
+  color: #333 !important;
+}
+
 .signup-button {
   width: 100%;
   background-color: rgb(28, 27, 27);
