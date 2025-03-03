@@ -13,7 +13,7 @@ function SignUpForm() {
   const handleChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.className]: e.target.value,
+      [e.target.name]: e.target.value,
     });
   };
 
@@ -50,38 +50,43 @@ function SignUpForm() {
   //console.log(formData);
   return (
     <div className="signup-container">
-      <h1 className="signup-title"> Zarejestruj się </h1>
-      <form onSubmit={handleSubmit} className="signup-form">
-        <input
-          type="text"
-          placeholder="nazwa użytkownika"
-          className="username"
-          onChange={handleChange}
-        />
-        <input
-          type="email"
-          placeholder="email"
-          className="email"
-          onChange={handleChange}
-        />
-        <input
-          type="password"
-          placeholder="hasło"
-          className="password"
-          onChange={handleChange}
-        />
-        <button disabled={loading} className="signup-button">
-          {loading ? "Ładowanie..." : "Utwórz konto"}
-        </button>
-        <OAuth />
-      </form>
-      <div className="signin-link-div">
-        <p>Masz konto?</p>
-        <Link to={"/alpacarnia/sign-in"}>
-          <span className="signin-link-span">Zaloguj się</span>
-        </Link>
+      <h1 className="signup-title">Zarejestruj się</h1>
+      <div className="signup-form-container">
+        <form onSubmit={handleSubmit} className="signup-form">
+          <input
+            type="text"
+            placeholder="nazwa użytkownika"
+            className="input-field"
+            name="username"
+            onChange={handleChange}
+          />
+          <input
+            type="email"
+            placeholder="email"
+            className="input-field"
+            name="email"
+            onChange={handleChange}
+          />
+          <input
+            type="password"
+            placeholder="hasło"
+            className="input-field"
+            name="password"
+            onChange={handleChange}
+          />
+          <button disabled={loading} className="signup-button">
+            {loading ? "Ładowanie..." : "UTWÓRZ KONTO"}
+          </button>
+          <OAuth />
+        </form>
+        <div className="signin-link-div">
+          <p>Masz konto?</p>
+          <Link to={"/alpacarnia/sign-in"}>
+            <span className="signin-link-span">Zaloguj się</span>
+          </Link>
+        </div>
+        {error && <p className="error-message">{error}</p>}
       </div>
-      {error && <p>{error}</p>}
     </div>
   );
 }
