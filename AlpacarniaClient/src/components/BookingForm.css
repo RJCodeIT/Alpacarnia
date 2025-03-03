@@ -1,22 +1,13 @@
-.booking-title {
-  font-size: xx-large;
-  text-align: center;
-  margin: 32px 0;
-  width: 100%;
+.booking-container {
+  width: 90%;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
 }
-input, select {
-  width: 100%;
-  background-color: #efefef;
-  border: 1px;
-  padding: 12px;
-  border-radius: 6px;
-}
-.username {
-  width: 100%;
-  border: 1px;
-  padding: 12px;
-  border-radius: 6px;
-}
+
 .booking-form {
   display: flex;
   flex-direction: column;
@@ -26,14 +17,60 @@ input, select {
   margin: 0 auto;
   padding: 20px;
 }
-.booking-container {
-  width: 90%;
-  margin: 0 auto;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+
+.booking-title {
+  font-size: xx-large;
+  text-align: center;
+  margin: 32px 0;
+  width: 100%;
+  color: #1a1a1a;
 }
+
+input, select {
+  width: 100%;
+  background-color: #f1f1f1;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 16px;
+  color: #333;
+  appearance: none;
+}
+
+select {
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23333%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 12px;
+  padding-right: 30px;
+  color: #333;
+}
+
+select::placeholder {
+  color: #666;
+}
+
+input[type="date"] {
+  appearance: none;
+  padding-right: 30px;
+  color: #333;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0.3;
+}
+
+input::placeholder {
+  color: #666;
+}
+
+.username {
+  width: 100%;
+  border: 1px;
+  padding: 12px;
+  border-radius: 6px;
+}
+
 .booking-button {
   width: 100%;
   background-color: rgb(28, 27, 27);
@@ -41,13 +78,22 @@ input, select {
   padding: 12px;
   border-radius: 6px;
   text-transform: uppercase;
+  font-weight: bold;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  border: none;
 }
+
 .booking-button:hover {
   opacity: 0.9;
 }
+
 .booking-button:disabled {
   opacity: 0.75;
+  cursor: not-allowed;
 }
+
 .signin-link-div {
   display: flex;
   gap: 8px;
@@ -55,12 +101,15 @@ input, select {
   width: 100%;
   justify-content: center;
 }
+
 .signin-link-span {
   color: black;
 }
+
 .time {
   color: #757589;
 }
+
 .date {
   color: #757589;
 }

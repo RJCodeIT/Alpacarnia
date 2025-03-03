@@ -184,10 +184,7 @@ function BookingForm() {
             ))}
         </select>
         <button className="booking-button">
-          Zarezerwuj
-          <span className="button-span">
-            <HiOutlineArrowNarrowRight />
-          </span>
+          ZAREZERWUJ
         </button>
       </form>
       {error && <p>{error}</p>}

@@ -32,25 +32,30 @@
 }
 
 .offer-action-button {
+  width: 100%;
   background-color: rgb(28, 27, 27);
   color: white;
   padding: 12px;
   border-radius: 6px;
   text-transform: uppercase;
-  margin-bottom: 8px;
-  border: none;
-  cursor: pointer;
-  min-width: 120px;
   font-weight: bold;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
-}
-
-.offer-action-button.cancel {
-  background-color: #6c757d;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  border: none;
 }
 
 .offer-action-button:hover {
   opacity: 0.9;
+}
+
+.offer-action-button:disabled {
+  opacity: 0.75;
+  cursor: not-allowed;
+}
+
+.offer-action-button.cancel {
+  background-color: #6c757d;
 }
 
 /* Table Styles */
